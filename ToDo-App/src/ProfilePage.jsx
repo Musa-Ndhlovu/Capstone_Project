@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 
 
-const ProfilePage = () => {
+const Profile = () => {
     const [isAuthenticated, setIsAuthenticated] = useState
     const [profile, setProfile] = useState ({
         name: '',
