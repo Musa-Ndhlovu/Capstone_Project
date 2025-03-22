@@ -1,16 +1,16 @@
 import { useState } from 'react'
 import './App.css'
-
 import React from 'react'
-import {BrowserRouter as Router, Routes, Route, Redirect, Switch, Link} from 'react-router-dom'
-import LoginPage from './components/LoginPage'
-import HomePage from './components/HomePage'
-import ProfilePage from './components/ProfilePage'
+import {Link} from 'react-router-dom'
 
-<LoginPage />
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
+import LoginPage from './LoginPage'
+import HomePage from './HomePage'
+import ProfilePage from './ProfilePage'
 
 
-function App () {
+
+function App() {
 
   const [isAuthenticates, setIsAuthenticated] = useState (false)
 
@@ -44,6 +44,5 @@ function App () {
     
   )
 }
-
 
 export default App
