@@ -1,4 +1,4 @@
-import create from 'zustand'
+import {create} from 'zustand'
 
 const  useTodoStore = create ((set) => ({
     todos: [],
@@ -19,4 +19,4 @@ const  useTodoStore = create ((set) => ({
     }
 }))
 
-export default TodoStore
+export default useTodoStore;

@@ -1,9 +1,10 @@
 import React from "react";
 import { useState, useEffect } from "react";
 
-
 import TodoStore from "./Todo Store";
 
+
+const Homepage = () => {
 <div>
 
 <button className = "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Create New Schedule</button>
@@ -11,6 +12,7 @@ import TodoStore from "./Todo Store";
 <button className = "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2px-4 rounded">Create New List</button>
 
 </div>
+
 
 const Schedule = () => {
     const [scheduleData, setScheduleData] = useState([ 
@@ -42,6 +44,8 @@ const Schedule = () => {
    },
 
     ]);
+    const [newSchdule, setNewSchedule] = useState('');
+    const [showAddSchedule, setShowAddSchedule] = useState(false);
 
     const toggleDone = (categoryIndex, eventIndex) => {
         const updatedSchedule = [...scheduleData];
@@ -50,6 +54,15 @@ const Schedule = () => {
       setScheduleData(updatedSchedule);
     };
 
+    const handleAddSchedule = () => {
+        if (setNewSchedule.trim() === '') return;
+        setScheduleData([
+          ...scheduleData,
+          { category: newCategory, events: [] },
+        ]);
+        setNewCategory('');
+        setShowAddCategory(false);
+      };
 
     return (
         <div className = " min-h-screen">
@@ -72,9 +85,10 @@ const Schedule = () => {
                  <div>{event.title}</div>
                </div>
              ))}
-           </div>
-         /div>
-    )
+           </div>   
+)
+
         }
-               
-export default HomePage;
+    }          
+
+    export default Homepage

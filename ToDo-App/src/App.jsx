@@ -16,16 +16,15 @@ function App() {
 
  return(
    <div>
-
-<ProfilePage /> 
-<Schedule />
+<HomePage />
+<ProfilePage />
 
 <h1> TDL & Schedules</h1>
 
 <nav>
 
  <ul>
-   <li><Link to = "HomePage"></Link></li>
+  <li> <Link to = "HomePage"></Link></li>
    <li><Link to = "LoginPage"></Link></li>
    <li><Link to = "ProfilePage"></Link></li>
  </ul>
@@ -33,21 +32,10 @@ function App() {
 </nav>
 
 
-<Routes>
-<Route path = "/HomePage" element = {< HomePage setIsAuthenticated = {setIsAuthenticated}/>}>
-</Route>
-
-<Route path = "," compnents = {HomePage} />
-<Route path ="LoginPage" compnents = {LoginPage} />
-<Route path = "ProfilePage" compnents = {ProfilePage} />
-
-</Routes>
-
+ 
     </div>
-    
-  )
+ )
+
 }
-
-
 
 export default App

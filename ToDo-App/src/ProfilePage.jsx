@@ -1,12 +1,13 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState} from "react";
 import { Link } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom"
 
 
 
-const Profile = () => {
-    const [isAuthenticated, setIsAuthenticated] = useState
-    const [profile, setProfile] = useState ({
+const ProfilePage = () => {
+    const [isAuthenticated, setIsAuthenticated] = useState (false)
+    const [profile, setProfile] = useState  ({
         name: '',
         email: '',
         number: '' ,
@@ -20,26 +21,31 @@ const handleChange = (e) => {
 };
 
 return (
-    <div className = 'rounded w-32 h-32'
+    <div className = "Profile-picture">
+        <img
+        className = "rounded w-32 h-32"
     src = "5472d1b09d3d724228109d381d617326.jpeg"
         alt= "5472d1b09d3d724228109d381d617326.jpeg"
         /> 
-    /div>
+       
+  
 
     <div className = "text-left w-full max-w-sm">
 
         <input type = "text"
         name = "name"
         value = {profile.name}
-        onchange = {handleChange}
+        onChange = {handleChange}
         />
         
      <input type = "text"
         name = "email"
         value = {profile.email}
-        onchange = {handleChange}
+        onChange = {handleChange}
         />
+    </div>
     </div>
 );
 }
+
 export default ProfilePage;
