@@ -2,10 +2,12 @@ import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
 import { BrowserRouter } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 
 const LoginPage = () => {
     const [formData, setFormData] = useState ({name:'', email:''});
+    const navigate = useNavigate()
     
 
 const handleChange = (e) => {
@@ -17,6 +19,8 @@ const handleChange = (e) => {
 const handleSubmit = (e) => {
     e.preventDefault();
     console.log(formData);
+
+    navigate("/home")
 }
 
 return (
