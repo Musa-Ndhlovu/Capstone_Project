@@ -7,35 +7,31 @@ import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import LoginPage from './LoginPage'
 import HomePage from './HomePage'
 import ProfilePage from './ProfilePage'
+ 
 
-
-
-function App() {
+ 
+ const App = () => {
 
   const [isAuthenticates, setIsAuthenticated] = useState (false)
 
- return(
-   <div>
-<HomePage />
-<ProfilePage />
+  return (
 
-<h1> TDL & Schedules</h1>
+    <nav>
 
-<nav>
-
- <ul>
-  <li> <Link to = "HomePage"></Link></li>
-   <li><Link to = "LoginPage"></Link></li>
-   <li><Link to = "ProfilePage"></Link></li>
- </ul>
-
+    
+      <Routes>
+      <Route path="/" element={<HomePage />} />
+        <Route path = "HomePage" element = {<HomePage />} />
+        <Route path = "LoginPage" element = {<LoginPage />} />
+        <Route path = "ProfilePage" element = {< ProfilePage />} />
+       </Routes>
+    
+ 
 </nav>
+  )
+}
 
 
  
-    </div>
- )
-
-}
 
 export default App
