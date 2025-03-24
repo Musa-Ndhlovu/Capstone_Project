@@ -8,17 +8,24 @@ return (
 
 //HOMEPAGE BUTTONS
 <div className="flex flex-col items-center min-h-screen bg-gray-100 p-6">
-<h1 classname = "text-xl font-bold text-center mb-4" >ToDo Lists and Schedules</h1>
+<h1 classname = "text-xl font-bold text-center mb-4" >
+  ToDo Lists and Schedules</h1>
 
 
 < div className = "flex gap-4">
-<button className = "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Create New Schedule</button>
+<button className = "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+  Create New Schedule</button>
 
-<button className = "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2px-4 rounded">Create New List</button>
+<button className = "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2px-4 rounded">
+  Create New List</button>
 
 </div>
+
+<Schedule />
+<ToDoList />
 </div>
 )
+}
 
 // MY SCHEDULES
 const Schedule = () => {
@@ -51,8 +58,10 @@ const Schedule = () => {
    },
 
     ]);
+   
     const [newSchdule, setNewSchedule] = useState(" ");
     const [showAddSchedule, setShowAddSchedule] = useState(false);
+
 
     const toggleDone = (categoryIndex, eventIndex) => {
         const updatedSchedule = [...scheduleData];
@@ -62,21 +71,25 @@ const Schedule = () => {
     };
 
     const handleAddSchedule = () => {
-        if (setNewSchedule.trim() === '') return;
-        setScheduleData([
-          ...scheduleData,
-          { category: newCategory, events: [] },
-        ]);
-        setNewCategory(" ");
-        setShowAddCategory(false);
-      };
+      if (setNewSchedule.trim() === '') return;
+      setScheduleData([
+        ...scheduleData,
+        { category: newCategory, events: [] },
+      ]);
+      setNewCategory(" ");
+      setShowAddCategory(false);
+    };
+
+
 
     return (
-        <div className = " min-h-screen">
+        <div className = " min-h-screen p-6">
             <h2 ClassName = "text-xl font-bold">My Schedules</h2>
             
+
         {scheduleData.map((category, catIndex) => ( 
-            <div key={eventIndex} className="mb-6">
+            <div key={catIndex} className="mb-6">
+             <h3 className="text-lg font-semibold text-blue-600">{category.category}</h3> 
 
     {category.events.map((event, eventIndex) => (
       <div key = {eventIndex} 
@@ -94,18 +107,20 @@ const Schedule = () => {
 
                  <div className="w-24 font-bold text-blue-600">{event.time || event.date || event.day}</div>
                  <div>{event.title}</div>
-               </div>
+               </div> 
              ))}
            </div> 
-        )
-      ) 
-        }
+        ))}
+        </div> 
+    ) 
+}
       
-
 //MY TODO LIST
+
 const ToDoList = () => {
 const [task, setTask] = useState ("")
 const [tasks, setTasks] = useState([])
+
 
 const handleInputChange = (e) => {
   setTask(e.target.value)
@@ -124,8 +139,7 @@ const toggleCompletion = (id) => {
 }
 
 const removeTask = (id) => {
-  setTasks(tasks.filter((task) => task.id !== id));
-};
+  setTasks(tasks.filter((task) => task.id !== id))};
 
 return (
   <div className = " flex flex-col items-center bg-gray-100 p-6 rounded-lg w-96 mx-auto mt-6">
@@ -147,6 +161,7 @@ return (
         >
           Add Task
         </button>
+      </div>
 
         <ul className="w-full">
         {tasks.map((task) => (
@@ -156,25 +171,24 @@ return (
               task.completed ? "line-through text-gray-500" : ""
             }`}
           >
+
             <span 
               onClick={() => toggleCompletion(task.id)} 
-              className="cursor-pointer"
-            >
+              className="cursor-pointer">
               {task.text}
             </span>
             <button 
               onClick={() => removeTask(task.id)} 
-              className="text-red-500 hover:text-red-700"
-            >
+              className="text-red-500 hover:text-red-700" >
               Remove
             </button>
           </li>
         ))}
       </ul>
     </div>
-</div>
 )
-
-    )
-
+    
+  }
+    
+  
     export default Homepage
