@@ -9,27 +9,20 @@ import HomePage from './HomePage'
 import ProfilePage from './ProfilePage'
  
 
+ function App() {
+  
+  return(
+   
  
- const App = () => {
+    <Routes>
+        <Route path="/" element={<LoginPage />} />
+        <Route path="/home" element={<HomePage />} />
+        <Route path = "/profile" element = {<ProfilePage />} />   
+      </Routes>
 
-  const [isAuthenticates, setIsAuthenticated] = useState (false)
 
-  return (
-
-    <nav>
-
-    
-      <Routes>
-      <Route path="/" element={<HomePage />} />
-        <Route path = "HomePage" element = {<HomePage />} />
-        <Route path = "LoginPage" element = {<LoginPage />} />
-        <Route path = "ProfilePage" element = {< ProfilePage />} />
-       </Routes>
-    
- 
-</nav>
   )
-}
+ }
 
 
  
