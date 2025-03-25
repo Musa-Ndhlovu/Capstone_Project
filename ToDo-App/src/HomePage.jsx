@@ -1,5 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 import TodoStore from "./Todo Store";
 
@@ -8,7 +9,12 @@ return (
 
 //HOMEPAGE BUTTONS
 <div className="flex flex-col items-center min-h-screen bg-gray-100 p-6">
-<h1 classname = "text-xl font-bold text-center mb-4" >
+
+<div className="absolute top-4 right-4">
+        <ProfileButton />
+      </div>
+
+<h1 className = "flex items-center text-xl font-bold text-center mb-4" >
   ToDo Lists and Schedules</h1>
 
 
@@ -26,6 +32,24 @@ return (
 </div>
 )
 }
+
+//PROFILE BUTTON THAT LEADS TO PROFILE PAGE WHEN CLICKED
+const ProfileButton = () => {
+  const navigate = useNavigate();
+
+  return (
+    <button 
+      onClick = {() => navigate('/profile')} 
+      className = " absolute top-4 right-4 p-2 bg-transparent border-none cursor-pointer"
+    >
+      <img 
+        src = "5472d1b09d3d724228109d381d617326.jpeg" 
+        alt = "ProfilePage" 
+        className = "w-12 h-12 rounded-full border-2 border-gray-600 shadow-lg hover:shadow-xl transition"
+      />
+    </button>
+  );
+};
 
 // MY SCHEDULES
 const Schedule = () => {
@@ -84,7 +108,7 @@ const Schedule = () => {
 
     return (
         <div className = " min-h-screen p-6">
-            <h2 ClassName = "text-xl font-bold">My Schedules</h2>
+            <h2 className = "text-xl font-bold">My Schedules</h2>
             
 
         {scheduleData.map((category, catIndex) => ( 
@@ -144,7 +168,7 @@ const removeTask = (id) => {
 return (
   <div className = " flex flex-col items-center bg-gray-100 p-6 rounded-lg w-96 mx-auto mt-6">
 
-    <h2 classname = "text-xl font-bold mb-4">To Do's</h2>
+    <h2 className = "text-xl font-bold mb-4">My To Do's</h2>
 
     <div className = "flex mb-4 w-full">
       <input
@@ -190,5 +214,5 @@ return (
     
   }
     
-  
+
     export default Homepage
