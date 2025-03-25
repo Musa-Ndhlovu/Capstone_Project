@@ -1,8 +1,8 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import './index.css'
 
-import TodoStore from "./Todo Store";
 
 const Homepage = () => {
 return (
