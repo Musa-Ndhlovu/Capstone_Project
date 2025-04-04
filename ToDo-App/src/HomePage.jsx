@@ -21,7 +21,7 @@ return (
 <button className = "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
   Create New Schedule </button>
 
-<button className = "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2px-4 rounded">
+<button className = "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
   Create New List</button>
 
 </div>
@@ -56,30 +56,39 @@ const Schedule = () => {
         {
             category : ' Monthly Expenses',
             events: [
-                {date: '28 March 2025', title: 'Retail Accounts', done: false},
-                {date: '31 March 2025', title: 'Bills', done: false},
+                {date: 'Friday, 28 March 2025', title: 'Retail Account Payments: Foschini, Edgars...', done: false},
+                {date: 'Monday, 31 March 2025', title: 'Bills: Electricity, Water, Rent...', done: false},
+                {date: 'Wednesday, 02 April 2025', title: 'ALX Professional Foundations Payment', done: false}
             ]
         },
    
+        {
+          category : ' School Assessments',
+          events: [
+            {date: 'Sunday, 06 April 2025', title: 'Front End  Capstone Project Final Submisson', done: false},
+            {date: 'Wednesday, 30 April 2025', title: 'Programming Assessment Submission', done: false},
+            {date: 'Tuesday, 06 May 2025', title: ' Fetch certificate from the department', done: false},
+          ]
+        },
+
    {
     category : 'Weekly Schedule',
     events: [
-        {Day: 'Monday', time:'09:30 AM', titile: 'Work Meeting', done: false},
-        {Day: 'Thurday', time:'19:00 AM', titile: 'Bible Study', done: false},
-        {Day: 'Friday', time:'15:30 PM', titile: 'Lunch With Bestie', done: false},
-        {Day: 'Sunday', time:'07:40 AM', titile: 'Church', done: false},
+        {date: 'Monday, 09:30 AM ',  title: 'Work Meeting', done: false},
+        {date: 'Thurday, 19:00 AM',  title: 'Bible Study', done: false},
+        {date: 'Frida, 15:30 PM',  title: 'Lunch With Bestie', done: false},
+        {date: 'Sunday, 07:40 AM',  title: 'Church', done: false},
     ]
    },
 
    {
     category : 'Gym',
     events: [
-        {Days: 'Monday, Wednesday, Friday', time:'05:00 AM', title:'Upper Body', done: false},
-        {Days: 'Tuseday, Thursday', time:'05:00 AM', title:'Lower Body', done: false},
-        {Days: 'Saturday', time:'07:00 AM', title:'Hiking', done: false},
+        {date: 'Mon, Wed, Fri, 05:00 AM', title:'Upper Body', done: false},
+        {date: 'Tue, Thurs, 05:00 AM', title:'Lower Body', done: false},
+        {date: 'Saturday, 07:00 AM', title:'Hiking', done: false},
     ]
-   },
-
+  }
     ]);
    
     const [newSchdule, setNewSchedule] = useState(" ");
@@ -182,9 +191,9 @@ return (
 
 <button 
           onClick={addTask} 
-          className="ml-2 p-2 bg-blue-500 text-white rounded-md hover:bg-blue-600"
+          className="bg-blue-500 hover:bg-blue-700 text-white  py-2 px-4 rounded"
         >
-          Add Task
+          Add To-Do
         </button>
       </div>
 
