@@ -8,7 +8,7 @@ const Homepage = () => {
 return (
 
 //HOMEPAGE BUTTONS
-<div className="flex flex-col items-center min-h-screen bg-gray-100 p-6">
+<div className="flex flex-col  items-center min-h-screen bg-gray-100 p-6">
 
 <div className="absolute top-4 right-4">
         <ProfileButton />
@@ -17,10 +17,9 @@ return (
 <h1 className = "flex items-center text-xl font-bold text-center mb-4" >
   ToDo Lists and Schedules</h1>
 
-
-< div className = "flex gap-4">
+  < div className = "flex gap-4">
 <button className = "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-  Create New Schedule</button>
+  Create New Schedule </button>
 
 <button className = "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2px-4 rounded">
   Create New List</button>
@@ -138,7 +137,9 @@ const Schedule = () => {
         </div> 
     ) 
 }
-      
+
+
+      <br />
 //MY TODO LIST
 
 const ToDoList = () => {
@@ -166,7 +167,7 @@ const removeTask = (id) => {
   setTasks(tasks.filter((task) => task.id !== id))};
 
 return (
-  <div className = " flex flex-col items-center bg-gray-100 p-6 rounded-lg w-96 mx-auto mt-6">
+  <div className = " flex flex-col bg-gray-100 p-6 rounded-lg w-96 mx-auto mt-6">
 
     <h2 className = "text-xl font-bold mb-4">My To Do's</h2>
 
