@@ -1,3 +1,8 @@
+TO DO List and SCHEDULE Creator
+
+Basically it is an appplication for people who want to stay up to date with the schedules and lists and they only have to go into the application and add the information they need reminders on and the application allows them
+to save there tasks as well as remove and tick them. The application allows for user to be able to categorize their schedules acording to already existing schedules.
+
 ALX CAPSTONE PROJECT 
 
 BUILDING WEEK 1
@@ -14,3 +19,22 @@ Plans for building week 2
 2. Work on fixing my code so that I am able to see the output of my code.
 3. Ensure that my buttons work and that I am able to add, remove and tick the schedules and lists
 4. Working on an Icon with a profile picture that is clickable and leads straight to the Profile page
+
+
+BUILDING WEEK 2
+Worked on the Figma layout of the design 
+Started coding
+Main page 
+Pomodoro page 
+Researched how to integrate the calendar to the app 
+
+Challenges faced: 
+Attempting to add the calendar integration and doing research on how to add the calendar API 
+Result: Failed to complete this task, My laptop ended up crashing.
+
+Next week (Final Week):
+1. Finish coding and test for bugs 
+2. Record demo and launch app 
+3. Clean up code 
+ 
+
